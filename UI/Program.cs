@@ -2,6 +2,8 @@
 using Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
+
 namespace UI
 {
     class Program
@@ -69,21 +71,49 @@ namespace UI
             //}
             //else
             //    Console.WriteLine("rekening niet gevonden");
-            Console.Write("geef een klantnummer in zonder rekeningen");
-            var klantOmTeVerwijderen = int.TryParse(Console.ReadLine(), out int klantnummer);
-            var klant = context.Klanten.Find(klantnummer);
-            if (klantOmTeVerwijderen)
-            {
+            //Console.Write("geef een klantnummer in zonder rekeningen");
+            //var klantOmTeVerwijderen = int.TryParse(Console.ReadLine(), out int klantnummer);
+            //var klant = context.Klanten.Find(klantnummer);
+            //if (klantOmTeVerwijderen)
+            //{
 
-                    if (klant.Rekeningen.Count()==0)
-                    {
-                        context.Klanten.Remove(klant);
-                        context.SaveChanges();
-                    }
-                    else Console.WriteLine("Klant heeft rekeningen");
-                
-            }
-            else Console.WriteLine("ongeldige klantnummer");
+            //        if (klant.Rekeningen.Count()==0)
+            //        {
+            //            context.Klanten.Remove(klant);
+            //            context.SaveChanges();
+            //        }
+            //        else Console.WriteLine("Klant heeft rekeningen");
+
+            //}
+            //else Console.WriteLine("ongeldige klantnummer");
+
+            //var managers = (from persoon in context.Personeelsleden
+            //               where persoon.Manager == null
+            //               select persoon).ToList();
+            //Tonen(managers, 0);
+
+            //void Tonen(List<Personeelslid> personeel, int aantalTabs)
+            //{
+            //    foreach(var persoon in personeel)
+            //    {
+            //        Console.Write(new string('\t', aantalTabs));
+            //        Console.WriteLine(persoon.Voornaam);
+            //        if (persoon.Ondergeschikten.Count != 0)
+            //        {
+            //            Tonen(persoon.Ondergeschikten.ToList(), aantalTabs + 1);
+            //        }
+            //    }
+            //}
+
+            //Artikels TEST
+            //context.Artikels.Add(new FoodArtikel { Houdbaarheid = 5, Naam = "PATATTN" });
+            //context.Artikels.Add(new NonFoodArtikel { Garantie = 69, Naam = "PC" });
+            //context.SaveChanges();
+
+
+
+
+
 
 
         }
